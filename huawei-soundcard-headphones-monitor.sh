@@ -60,8 +60,6 @@ function switch_to_headphones() {
     pacmd set-sink-port alsa_output.pci-0000_00_1f.3-platform-skl_hda_dsp_generic.HiFi__hw_sofhdadsp__sink "[Out] Headphones"
 }
 
-sleep 2 # allows audio system to initialise first
-
 old_status=0
 
 while true; do

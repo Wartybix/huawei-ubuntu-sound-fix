@@ -85,7 +85,7 @@ while true; do
 		;;
 	esac
 	
-        echo "${message}"
+        notify-send "Audio Monitor" "${message}"
         old_status=$status
     fi
 

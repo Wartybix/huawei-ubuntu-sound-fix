@@ -3,20 +3,20 @@
 if command -v apt &>/dev/null; then
     echo "Using apt to install dependencies..."
     sudo apt update
-    sudo apt install -y alsa-tools alsa-utils
+    sudo apt install -y alsa-tools alsa-utils pcregrep
 elif 
     command -v pacman &>/dev/null; then
     echo "Using pacman to install dependencies..."
-    sudo pacman -Sy alsa-tools alsa-utils --noconfirm
+    sudo pacman -Sy alsa-tools alsa-utils pcregrep --noconfirm
 elif
     command -v eopkg &>/dev/null; then
     echo "Using eopkg to install dependencies..."
     sudo eopkg up
-    sudo eopkg it alsa-tools alsa-utils -y
+    sudo eopkg it alsa-tools alsa-utils pcregrep -y
 elif 
     command -v dnf &>/dev/null; then
     echo "Using dnf to install dependencies..."
-    sudo dnf install -y alsa-tools alsa-utils
+    sudo dnf install -y alsa-tools alsa-utils pcregrep
 else
     echo "Neither apt, pacman, eopkg, nor dnf found. Cannot install dependencies."
     exit 1

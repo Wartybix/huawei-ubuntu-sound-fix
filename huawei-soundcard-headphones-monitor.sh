@@ -66,7 +66,7 @@ old_status=0
 
 while true; do
     # if any audio is playing:
-    if pactl list | pcregrep -M 'Sink #52(\n).*State: RUNNING' > /dev/null; then
+    if pactl list | pcregrep -M 'Sink #.*(\n).*State: RUNNING'; then
         # if headphone jack isn't plugged:
         if amixer -c 0 cget numid=14 | grep -q "values=off"; then
             status=1
